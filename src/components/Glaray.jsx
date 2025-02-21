@@ -9,7 +9,7 @@ import cup7 from '../../public/images/cups/Rectangle 15.png'
 import cup8 from '../../public/images/cups/Rectangle 16.png'
 const Glaray = () => {
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className='max-w-7xl mx-auto font-[Rancho]'>
       <div className='text-center pb-6'>
         <p className='text-xl '>Follow Us Now</p>
         <h2 className='text-[55px] font-semibold'>Follow on Instagram</h2>

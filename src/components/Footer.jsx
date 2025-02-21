@@ -3,9 +3,9 @@ import ful from '../../public/images/more/logo1.png'
 const Footer = () => {
   return (
     <div style={{
-          backgroundImage: "url(https://i.ibb.co.com/Cpd57Sr5/13.jpg)",
-        }}>
-      <div className='max-w-7xl mx-auto'>
+      backgroundImage: "url(https://i.ibb.co.com/Cpd57Sr5/13.jpg)",
+    }}>
+      <div className='max-w-7xl mx-auto font-[Rancho]'>
         <footer className="footer text-neutral-content p-10 mt-[119px]">
           <aside>
             <img src={ful} alt="" width={75} height={90} />
@@ -55,7 +55,7 @@ const Footer = () => {
           </nav>
         </footer>
       </div>
-   </div>
+    </div>
   );
 };
 
