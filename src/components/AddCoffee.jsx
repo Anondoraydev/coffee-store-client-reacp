@@ -52,7 +52,7 @@ const About = () => {
   return (
     <div className="mt-6 max-w-7xl mx-auto">
       <Link to={'/'}> <h3 className='text-[20px] pb-5 flex items-center gap-1 '> <FaLongArrowAltLeft />Back to home</h3></Link>
-      <div className=" bg-[#F4F3F0] py-[70px] px-[100px]">
+      <div className="bg-[#F4F3F0] py-[70px] px-[100px]"> 
         <h2 className="text-[45px] text-center">Add New Coffee</h2>
         <p className="text-[18px] text-center px-24 py-6  ">
           It is a long established fact that a reader will be distraceted by the
