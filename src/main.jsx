@@ -6,15 +6,20 @@ import UpdateCoffee from './components/UpdateCoffee.jsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
+import LoginForm from './LoginForm.jsx';
 const router = createBrowserRouter([
 
 
   {
-    path: '/',
+    ath: '/dashboard',
     element: <Layout />,
     children: [
       {
         path: '/',
+        element: <LoginForm />,
+      },
+      {
+        path: '/dashboard',
         element: <App />,
         loader: () => fetch('http://localhost:5000/coffee'),
       },
