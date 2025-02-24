@@ -1,9 +1,34 @@
 import React from 'react';
 import { MdEdit, MdDelete } from "react-icons/md";
 import { GrView } from "react-icons/gr";
+import Swal from 'sweetalert2';
 
 const CoffeeCard = ({ coffee }) => {
-  const { name, quantity, supplier, taste, category, details, photo } = coffee;
+  const { _id, name, quantity, supplier, taste, category, details, photo } = coffee;
+  
+  const handelDelete =_id=>{
+    console.log(_id); 
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Swal.fire({
+        //   title: "Deleted!",
+        //   text: "Your file has been deleted.",
+        //   icon: "success"
+        // });
+        console.log('Delete comfarme');
+        
+      }
+    });
+  }
+
   return (
     <div>
       <div className="card card-side bg-base-100 shadow-xl">
@@ -26,7 +51,9 @@ const CoffeeCard = ({ coffee }) => {
             <div className="join join-vertical gap-3">
               <button className="btn  bg-[#D2B48C]"><GrView className='text-xl text-white'/></button>
               <button className="btn bg-[#3C393B] "><MdEdit className='text-xl text-white'/></button>
-              <button className="btn  bg-[#EA4744]"><MdDelete  className='text-xl text-white'/></button>
+              <button
+                onClick={()=>handelDelete(_id)}
+                className="btn  bg-[#EA4744]"><MdDelete className='text-xl text-white' /></button>
             </div>
           </div>
         </div>
