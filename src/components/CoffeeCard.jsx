@@ -17,13 +17,22 @@ const CoffeeCard = ({ coffee }) => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
-      if (result.isConfirmed) {
-        // Swal.fire({
-        //   title: "Deleted!",
-        //   text: "Your file has been deleted.",
-        //   icon: "success"
-        // });
-        console.log('Delete comfarme');
+      if (result.isConfirmed) { 
+        fetch(`http://localhost:5000/coffee/${_id}`,{
+          method:"DELETE"
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Coffee has been deleted.",
+                icon: "success"
+              });
+            }
+          
+        })
         
       }
     });
