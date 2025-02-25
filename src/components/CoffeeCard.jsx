@@ -2,12 +2,13 @@ import React from 'react';
 import { MdEdit, MdDelete } from "react-icons/md";
 import { GrView } from "react-icons/gr";
 import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const CoffeeCard = ({ coffee }) => {
   const { _id, name, quantity, supplier, taste, category, details, photo } = coffee;
-  
-  const handelDelete =_id=>{
-    console.log(_id); 
+
+  const handelDelete = _id => {
+    console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -17,9 +18,9 @@ const CoffeeCard = ({ coffee }) => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
-      if (result.isConfirmed) { 
-        fetch(`http://localhost:5000/coffee/${_id}`,{
-          method:"DELETE"
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/coffee/${_id}`, {
+          method: "DELETE"
         })
           .then(res => res.json())
           .then(data => {
@@ -31,9 +32,9 @@ const CoffeeCard = ({ coffee }) => {
                 icon: "success"
               });
             }
-          
-        })
-        
+
+          })
+
       }
     });
   }
@@ -58,10 +59,12 @@ const CoffeeCard = ({ coffee }) => {
           </div>
           <div className="card-actions justify-end ">
             <div className="join join-vertical gap-3">
-              <button className="btn  bg-[#D2B48C]"><GrView className='text-xl text-white'/></button>
-              <button className="btn bg-[#3C393B] "><MdEdit className='text-xl text-white'/></button>
+              <button className="btn  bg-[#D2B48C]"><GrView className='text-xl text-white' /></button>
+              <Link to={`/updateCoffee/${_id}`}>
+                <button className="btn bg-[#3C393B] "><MdEdit className='text-xl text-white' /></button>
+              </Link>
               <button
-                onClick={()=>handelDelete(_id)}
+                onClick={() => handelDelete(_id)}
                 className="btn  bg-[#EA4744]"><MdDelete className='text-xl text-white' /></button>
             </div>
           </div>
