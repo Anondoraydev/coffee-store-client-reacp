@@ -3,8 +3,7 @@ import './App.css';
 import CoffeeCard from './components/CoffeeCard';
 import { GiCoffeeCup } from "react-icons/gi";
 import Banner from './components/Banner';
-import Glaray from './components/Glaray';
-import LoginForm from './LoginForm';
+import Glaray from './components/Glaray'; 
 function App() {
   const coffees = useLoaderData();
   return (
