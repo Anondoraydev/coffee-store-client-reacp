@@ -4,7 +4,7 @@ import { GrView } from "react-icons/gr";
 import Swal from 'sweetalert2';
 import { Link } from 'react-router';
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   const { _id, name, quantity, supplier, taste, category, details, photo } = coffee;
 
   const handelDelete = _id => {
@@ -30,7 +30,9 @@ const CoffeeCard = ({ coffee }) => {
                 title: "Deleted!",
                 text: "Your Coffee has been deleted.",
                 icon: "success"
-              });
+              })
+              const remaining = coffees.filter(cof => cof._id !== _id)
+              setCoffees(remaining)
             }
 
           })

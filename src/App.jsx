@@ -4,8 +4,10 @@ import CoffeeCard from './components/CoffeeCard';
 import { GiCoffeeCup } from "react-icons/gi";
 import Banner from './components/Banner';
 import Glaray from './components/Glaray'; 
+import { useState } from 'react';
 function App() {
-  const coffees = useLoaderData();
+  const loadedCoffees = useLoaderData();
+  const [coffees, setCoffees] = useState(loadedCoffees)
   return (
     <>
       <Banner />
@@ -21,7 +23,11 @@ function App() {
         </div>
         <div className='grid md:grid-cols-2 gap-2 px-20'>
           {coffees.map(coffee => (
-            <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>
+            <CoffeeCard key={coffee._id}
+              coffee={coffee}
+              coffees={coffees}
+              setCoffees={setCoffees}
+            ></CoffeeCard>
           ))}
         </div>
       </div>
