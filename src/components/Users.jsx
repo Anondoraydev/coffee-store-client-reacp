@@ -70,7 +70,7 @@ const Users = () => {
                 <th>1</th>
                 <td>{user.email}</td>
                 <td>{user.createdAt}</td> {/* Fixed typo here: cratedAt -> createdAt */}
-                <td>{user.lastLoggedIn}</td>
+                <td>{user.lastLoggedAt}</td>
                 <td>
                   <button onClick={() => handelDelete(user._id)} className="btn bg-[#EA4744]">
                     <MdDelete className="text-xl text-white" />

@@ -18,12 +18,24 @@ const SignIn = () => {
           console.log("User signed in:", result.user);
           const user = {
             email,
-            lastLoggedAt:result.user?.metadata?.lastSignInTime,
+            lastLoggedAt: result.user?.metadata?.lastSignInTime,
           }
           //update last logged at in the database
+
+          fetch('http://localhost:5000/user', {
+            method: 'PATCH',
+            headers: {
+              'content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+          })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+            })
         })
         .catch((error) => {
-          console.error("Sign-in error:", error);
+          console.error(error);
         });
     }
   };
