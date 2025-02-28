@@ -5,24 +5,20 @@ import AddCoffee from './components/AddCoffee.jsx';
 import UpdateCoffee from './components/UpdateCoffee.jsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './components/Layout.jsx';
-import LoginForm from './LoginForm.jsx';
+import Layout from './components/Layout.jsx'; 
 import SingIn from './components/SingIn.jsx';
 import SingUp from './components/SingUp.jsx';
 import AuthProviders from './provaiders/AuthProviders.jsx';
+import Users from './components/Users.jsx';
 const router = createBrowserRouter([
 
 
   {
-    ath: '/dashboard',
+    ath: '/',
     element: <Layout />,
     children: [
       {
         path: '/',
-        element: <LoginForm />,
-      },
-      {
-        path: '/dashboard',
         element: <App />,
         loader: () => fetch('http://localhost:5000/coffee'),
       },
@@ -42,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: '/singup',
         element: <SingUp />,
+      },
+      {
+        path: '/users',
+        element: <Users />,
+        loader: () => fetch('http://localhost:5000/user'),
       },
     ],
   },
