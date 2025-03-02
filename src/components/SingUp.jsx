@@ -8,7 +8,7 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value; 
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
 
@@ -23,7 +23,7 @@ const SignUp = () => {
 
       console.log("Sending data to backend:", user);
 
-      const response = await fetch('http://localhost:5000/user', {
+      const response = await fetch(' http://localhost:5000/user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user),

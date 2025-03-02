@@ -22,7 +22,7 @@ const SignIn = () => {
           }
           //update last logged at in the database
 
-          fetch('http://localhost:5000/user', {
+          fetch(' http://localhost:5000/user', {
             method: 'PATCH',
             headers: {
               'content-Type': 'application/json'

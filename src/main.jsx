@@ -5,7 +5,7 @@ import AddCoffee from './components/AddCoffee.jsx';
 import UpdateCoffee from './components/UpdateCoffee.jsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './components/Layout.jsx'; 
+import Layout from './components/Layout.jsx';
 import SingIn from './components/SingIn.jsx';
 import SingUp from './components/SingUp.jsx';
 import AuthProviders from './provaiders/AuthProviders.jsx';
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <App />,
-        loader: () => fetch('http://localhost:5000/coffee'),
+        loader: () => fetch(' http://localhost:5000/coffee'),
       },
       {
         path: '/addCoffee',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: '/updateCoffee/:id',
         element: <UpdateCoffee />,
-        loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`),
+        loader: ({ params }) => fetch(` http://localhost:5000/coffee/${params.id}`),
       },
       {
         path: '/singin',
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: '/users',
         element: <Users />,
-        loader: () => fetch('http://localhost:5000/user'),
+        loader: () => fetch(' http://localhost:5000/user'),
       },
     ],
   },

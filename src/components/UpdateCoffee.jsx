@@ -20,7 +20,7 @@ const UpdateCoffee = () => {
     const updatedCoffee = { name, quantity, supplier, taste, category, details, photo };
 
     // Send updated data to the server
-    fetch(`http://localhost:5000/coffee/${_id}`, {
+    fetch(` http://localhost:5000/coffee/${_id}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(updatedCoffee),
@@ -35,7 +35,7 @@ const UpdateCoffee = () => {
             icon: 'success',
             confirmButtonText: 'Ok',
           });
-          event.target.reset(); 
+          event.target.reset();
         }
       });
   };
