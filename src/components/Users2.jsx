@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const User2 = () => {
 
 
-  const { isPending, data: users } = useQuery({
+  const { isPending, isError,error, data: users } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
       const res = await fetch(' http://localhost:5000/user');
@@ -24,6 +24,10 @@ const User2 = () => {
 
   if (isPending) {
     return <div className='text-center top-1/2 left-1/2 absolute'><span className="loading loading-spinner text-neutral"></span></div>
+  }
+
+  if (isError) {
+    return <div>{error.message}</div>
   }
 
   const handleDelete = (id) => {
