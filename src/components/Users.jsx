@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router";
 import { MdDelete } from "react-icons/md";
-import Swal from 'sweetalert2'; // Import SweetAlert
+import Swal from 'sweetalert2';
 
 const Users = () => {
-  const loadedUsers = useLoaderData(); // Renaming loddedUsers to loadedUsers
+  const loadedUsers = useLoaderData();
   const [users, setUsers] = useState(loadedUsers);
 
-  const handelDelete = (id) => {
+  const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -69,10 +69,10 @@ const Users = () => {
               <tr key={user._id}>
                 <th>1</th>
                 <td>{user.email}</td>
-                <td>{user.createdAt}</td> {/* Fixed typo here: cratedAt -> createdAt */}
+                <td>{user.createdAt}</td>
                 <td>{user.lastLoggedAt}</td>
                 <td>
-                  <button onClick={() => handelDelete(user._id)} className="btn bg-[#EA4744]">
+                  <button onClick={() => handleDelete(user._id)} className="btn bg-[#EA4744]">
                     <MdDelete className="text-xl text-white" />
                   </button>
                 </td>
